@@ -1,0 +1,64 @@
+
+ <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="background.js"></script>
+    <title>Online Shopping</title>
+</head>
+<body>
+    <div class="chrome_ext_description">
+<p>
+    Compare prices of Amazon products with similar ones from Flipkart and Snapdeal. 
+    Click on the product name below to be redirected to the respective products on the aforementioned websites. 
+</p>
+</div>
+<hr>
+
+   {% for products in products %} 
+   <img src="{{ products.title }}" alt=""> 
+            <div class="text-wrapper">
+             <div class="product_listtt">
+            <h3> <a href="{{ products.link }}" target="_blank"> {{ products.name }}</a></h3>
+            <div class="product_price_edit">
+            <p> {{ products.price }}</p>
+            </div>
+        </div>
+            <hr>
+        </div>
+   {% endfor%}
+</body>
+<style>
+     body {
+        background-image: url(https://aditagarwal.com/connect4/chrome_ext_bg.png);
+        height: 100%;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 500px;
+        min-width:500px;
+        max-width:500px;
+        min-height: 500px;
+     }   
+</style>
+<style>
+    .chrome_ext_description {
+        padding-top: 3px;
+        padding-left: 3px;
+    }
+    a:link { color: #1A0DAB; }
+    a:visited { color: #660099; }
+    hr { 
+      display: block; 
+      height: 2px;
+      border-top: 2px solid #474747;
+}
+.product_price_edit{
+    font-size: 1.5em;
+}
+.product_listtt {
+    padding-left: 3px;
+}
+  </style>
+</html>
